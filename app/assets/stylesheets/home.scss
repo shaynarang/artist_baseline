@@ -3,34 +3,42 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 button:focus {
-  outline:0;
+  outline: 0;
 }
 
-nav {
-  ul {
-    background: white;
-    position: fixed;
-    display: none;
-    margin: 0;
-    width: 50%;
-    padding: 2% 25%;
-    list-style-type: none;
+body {
+  nav {
+    ul {
+      background: white;
+      position: fixed;
+      display: none;
+      margin: 0;
+      width: 44%;
+      padding: 2% 3%;
+      list-style-type: none;
+      border: 1px solid black;
 
-    li {
-      text-align: center;
-      margin-bottom: 10px;
+      li {
+        text-align: center;
+      }
+
+      li:not(:last-child) {
+        padding-bottom: 10px;
+      }
 
       a {
         text-decoration: none;
       }
     }
+
+    button {
+      float: right;
+    }
   }
 
-  button {
-    float: right;
+  #content {
+    padding: 2% 3%;
+    border: 1px solid black;
+    letter-spacing: normal;
   }
-}
-
-#content {
-  letter-spacing: normal;
 }
