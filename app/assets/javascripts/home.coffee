@@ -5,3 +5,7 @@ $(document).ready ->
   $('button.hamburger').click ->
     $(this).toggleClass('is-active')
     $('nav ul').slideToggle('medium')
+
+  $('nav ul a').click ->
+    $('button.hamburger').toggleClass('is-active')
+    $('nav ul').slideToggle('medium')
