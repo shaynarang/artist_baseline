@@ -7,6 +7,7 @@ end
 
 gem 'bootsnap', require: false
 gem 'coffee-rails', '~> 4.2'
+gem 'hamburgers'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'pg', '~> 0.18'
