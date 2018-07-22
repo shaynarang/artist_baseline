@@ -2,10 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+button:focus {
+  outline:0;
+}
+
 nav {
+
   ul {
+    background: white;
+    position: fixed;
+    display: none;
     margin: 0;
-    padding: 0;
+    padding: 0 100% 0 0;
     list-style-type: none;
 
     li {
