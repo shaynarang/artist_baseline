@@ -1,0 +1,23 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#content {
+  letter-spacing: normal;
+}
