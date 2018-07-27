@@ -16,7 +16,7 @@ body {
       position: fixed;
       display: none;
       list-style-type: none;
-      border: 1px solid black;
+      box-shadow: inset 0 0 1px #000000;
 
       li {
         text-align: center;
@@ -43,7 +43,7 @@ body {
 
   #content {
     padding: 2% 3%;
-    border: 1px solid black;
+    box-shadow: inset 0 0 1px #000000;
     letter-spacing: normal;
   }
 }
