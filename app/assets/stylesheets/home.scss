@@ -9,12 +9,12 @@ button:focus {
 body {
   nav {
     ul {
+      margin: 0;
+      padding: 0;
+      width: 60%;
       background: white;
       position: fixed;
       display: none;
-      margin: 0;
-      width: 44%;
-      padding: 2% 3%;
       list-style-type: none;
       border: 1px solid black;
 
@@ -36,9 +36,24 @@ body {
     }
   }
 
+  .div-padding {
+    padding: 2% 3%;
+    margin: 0;
+  }
+
   #content {
     padding: 2% 3%;
     border: 1px solid black;
     letter-spacing: normal;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .page-margin {
+    display: none;
+  }
+
+  ul {
+    width: 100% !important;
   }
 }
