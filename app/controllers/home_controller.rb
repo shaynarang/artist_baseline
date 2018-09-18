@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def display_content
     @section = params[:section]
+    @message = Message.new
 
     respond_to do |format|
       format.js
