@@ -1,7 +1,57 @@
 <h1>Contact</h1>
 
-<p>Sed ultricies sem a sagittis porttitor. Proin ac commodo ante. Integer orci orci, tincidunt lobortis pulvinar vel, porta ut tortor. Cras faucibus risus magna, eget ultricies augue auctor sit amet. Pellentesque vitae scelerisque mauris, vel porttitor lectus. Cras aliquet, lectus et elementum scelerisque, felis erat finibus sem, non euismod libero leo quis nisl. Quisque eleifend ligula vel diam volutpat iaculis. Curabitur id molestie est.
-
-Duis vitae tincidunt ante. Nullam euismod lectus id metus mollis, ac aliquam odio efficitur. Morbi pulvinar aliquet ante blandit laoreet. Integer hendrerit sem in lectus viverra, non suscipit metus pretium. Sed nisi urna, semper nec faucibus vel, sollicitudin tempor nisi. Proin dictum vehicula ante quis rutrum. Mauris non vulputate lacus. Donec dignissim lobortis condimentum. Phasellus luctus laoreet enim, et rutrum ipsum imperdiet id. Praesent ullamcorper volutpat magna, ac vestibulum elit scelerisque eget. Sed in sollicitudin leo, quis laoreet ante. Sed lectus massa, convallis ac dolor nec, commodo finibus dui. Aenean convallis lectus eu nisi viverra, eu elementum nisl varius. Morbi pellentesque ex non cursus imperdiet.
-
-Nunc luctus massa erat, id rhoncus turpis auctor ac. Proin vitae pellentesque neque. Aliquam cursus elit in nulla porttitor commodo. Sed tincidunt metus diam. Donec scelerisque nunc non nisl egestas dictum. In placerat faucibus arcu, vitae lacinia nisi aliquam id. Cras eget lacinia risus. Curabitur tellus nisi, pretium eu condimentum vehicula, auctor ac nunc.</p>
+<div id="contact_form">
+  <%= form_for @message, url: {controller: "messages", action: "create"}, method: "post", :remote => true do |f| %>
+    <div class="col-md-12 col-sm-12 col-xs-12 contact_row">
+      <div class="field">
+        <%= f.label :name %>
+        <% if @message.errors[:name] %>
+          <span class="contact_form_error">
+            <%= @message.errors[:name].to_sentence.downcase.capitalize %>
+          </span>
+        <% end %>
+        <br/>
+        <%= f.text_field :name %>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 contact_row">
+      <div class="field">
+        <%= f.label :email %>
+        <% if @message.errors[:email] %>
+          <span class="contact_form_error">
+            <%= @message.errors[:email].to_sentence.downcase.capitalize %>
+          </span>
+        <% end %>
+        <br/>
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 contact_row">
+      <div class="field">
+        <%= f.label :subject %>
+        <% if @message.errors[:subject] %>
+          <span class="contact_form_error">
+            <%= @message.errors[:subject].to_sentence.downcase.capitalize %>
+          </span>
+        <% end %>
+        <br/>
+        <%= f.text_field :subject %>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 contact_row">
+      <div class="field">
+        <%= f.label :content, "Message" %>
+        <% if @message.errors[:content] %>
+          <span class="contact_form_error">
+            <%= @message.errors[:content].to_sentence.downcase.capitalize %>
+          </span>
+        <% end %>
+        <br/>
+        <%= f.text_area :content %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Send Message", :id => "contact_form_submit_button", :value => "SEND" %>
+      </div>
+    </div>
+  <% end %>
+</div>
