@@ -7,6 +7,7 @@ class HomeController < ApplicationController
     @bio = Bio.first
     @posts = Post.order('created_at DESC').all
     @social_feed = SocialFeed.first
+    @music = Music.first
     @message = Message.new
 
     respond_to do |format|
