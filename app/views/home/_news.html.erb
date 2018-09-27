@@ -2,7 +2,7 @@
   <div class="pure-u-1-1">
     <h1>News</h1>
 
-    <% @posts.each do |post| %>
+    <% @posts&.each do |post| %>
       <p>Date: <%= post.created_at %></p>
       <p>Title: <%= post.title %></p>
       <p>Author: <%= post.author %></p>
