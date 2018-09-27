@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   def display_content
     @section = params[:section]
     @posts = Post.order('created_at DESC').all
+    @social_feed = SocialFeed.first
     @message = Message.new
 
     respond_to do |format|
