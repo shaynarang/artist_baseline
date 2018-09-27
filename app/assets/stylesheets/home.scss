@@ -50,6 +50,24 @@ body {
   p {
     text-align: justify;
   }
+
+  .field {
+    padding-bottom: 2%;
+
+    input, textarea {
+      margin-top: 1%;
+      width: 100%;
+      border: 1px solid #D8D8D8;
+    }
+
+    input {
+      height: 28px;
+    }
+
+    textarea {
+      height: 108px;
+    }
+  }
 }
 
 @media screen and (max-width: 48em) {
