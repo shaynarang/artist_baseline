@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def display_content
     @section = params[:section]
+    @bio = Bio.first
     @posts = Post.order('created_at DESC').all
     @social_feed = SocialFeed.first
     @message = Message.new
