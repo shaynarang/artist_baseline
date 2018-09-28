@@ -1,13 +1,12 @@
 class HomeController < ApplicationController
   def index
+    @pages = Page.order(:priority)
   end
 
   def display_content
     @section = params[:section]
-    @bio = Bio.first
+    @page = Page.find_by(id: params[:page_id])
     @posts = Post.order('created_at DESC').all
-    @social_feed = SocialFeed.first
-    @music = Music.first
     @message = Message.new
 
     respond_to do |format|
