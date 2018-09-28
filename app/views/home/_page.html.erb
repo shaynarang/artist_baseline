@@ -1,1 +1,11 @@
 <h1><%= @page&.title %></h1>
+
+<% @page&.texts&.order(:priority).each do |text| %>
+  <%= text.content %>
+  <hr>
+<% end %>
+
+<% @page&.snippets&.order(:priority).each do |snippet| %>
+  <%= snippet.content.html_safe %>
+  <hr>
+<% end %>
