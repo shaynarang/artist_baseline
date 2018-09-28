@@ -5,10 +5,10 @@
       <div class="pure-u-1-2">
         <ul>
           <div class="div-padding">
-            <li><%= link_to 'Bio', display_content_path(section: 'bio'), :remote => true %></li>
+            <% @pages&.each do |page| %>
+              <li><%= link_to page.title, display_content_path(section: 'page', page_id: page.id), :remote => true %></li>
+            <% end %>
             <li><%= link_to 'News', display_content_path(section: 'news'), :remote => true %></li>
-            <li><%= link_to 'Music', display_content_path(section: 'music'), :remote => true %></li>
-            <li><%= link_to 'Social', display_content_path(section: 'social'), :remote => true %></li>
             <li><%= link_to 'Contact', display_content_path(section: 'contact'), :remote => true %></li>
           </div>
         </ul>
