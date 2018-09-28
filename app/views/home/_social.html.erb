@@ -1,7 +1,0 @@
-<h1>Social</h1>
-
-<%= @social_feed&.snippet&.html_safe %>
-
-<script>
-  setTimeout(function(){ <%= @social_feed&.extra_script&.html_safe %> }, 200);
-</script>
