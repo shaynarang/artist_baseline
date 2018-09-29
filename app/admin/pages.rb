@@ -8,7 +8,7 @@ ActiveAdmin.register Page do
       f.input :priority
     end
     f.has_many :sections, sortable: :priority, sortable_start: 1 do |section|
-      section.input :kind
+      section.input :kind, :as => :select, :collection => Section::KINDS
       section.input :content
       section.input :priority
       section.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'

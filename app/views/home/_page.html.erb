@@ -3,7 +3,7 @@
     <h1><%= @page&.title %></h1>
 
     <% @page&.sections&.order(:priority).each do |section| %>
-      <%= section.content %>
+      <%= section.content.html_safe %>
     <% end %>
 
     <script>
