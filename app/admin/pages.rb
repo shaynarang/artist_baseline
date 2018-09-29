@@ -1,5 +1,5 @@
 ActiveAdmin.register Page do
-  permit_params :title, :priority, :texts_attributes => [:id, :content, :priority, :_destroy], :snippets_attributes => [:id, :content, :priority, :_destroy]
+  permit_params :title, :priority, :sections_attributes => [:id, :kind, :content, :priority, :_destroy]
 
   form do |f|
     f.inputs "Page Details" do
@@ -7,15 +7,11 @@ ActiveAdmin.register Page do
       f.input :title
       f.input :priority
     end
-    f.has_many :texts do |text|
-      text.input :content
-      text.input :priority
-      text.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
-    end
-    f.has_many :snippets do |snippet|
-      snippet.input :content
-      snippet.input :priority
-      snippet.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
+    f.has_many :sections, sortable: :priority, sortable_start: 1 do |section|
+      section.input :kind
+      section.input :content
+      section.input :priority
+      section.input :_destroy, :as => :boolean, :required => false, :label => 'Remove'
     end
     f.actions do
       f.cancel_link(:back)
