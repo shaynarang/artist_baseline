@@ -3,6 +3,8 @@ ActiveAdmin.register Page do
 
   reorderable
 
+  config.filters = false
+
   permit_params :title, :position, :sections_attributes => [:id, :kind, :content, :position, :_destroy]
 
   index as: :reorderable_table do
