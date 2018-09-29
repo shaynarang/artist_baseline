@@ -8,8 +8,6 @@
             <% @pages&.each do |page| %>
               <li><%= link_to page.title, display_content_path(page_name: 'page', page_id: page.id), :remote => true %></li>
             <% end %>
-            <li><%= link_to 'News', display_content_path(page_name: 'news'), :remote => true %></li>
-            <li><%= link_to 'Contact', display_content_path(page_name: 'contact'), :remote => true %></li>
           </div>
         </ul>
       </div>
