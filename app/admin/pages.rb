@@ -1,21 +1,24 @@
 ActiveAdmin.register Page do
-  permit_params :title, :priority, :sections_attributes => [:id, :kind, :content, :priority, :_destroy]
+  config.sort_order = 'position_asc'
 
-  index do
+  reorderable
+
+  permit_params :title, :position, :sections_attributes => [:id, :kind, :content, :position, :_destroy]
+
+  index as: :reorderable_table do
     column :title
-    column :priority
     actions
   end
 
   show do
     attributes_table do
       row :title
-      row :priority
       if page.sections.any?
-        table_for page.sections do
-          column :kind
-          column :content
-          column :priority
+        panel 'Sections' do
+          reorderable_table_for page.sections.order(:position) do
+            column :kind
+            column :content
+          end
         end
       end
     end
