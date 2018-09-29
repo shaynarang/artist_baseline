@@ -7,6 +7,8 @@ end
 
 gem 'active_attr'
 gem 'activeadmin'
+gem 'activeadmin_reorderable'
+gem 'acts_as_list'
 gem 'bootsnap', require: false
 gem 'carrierwave', '~> 1.0'
 gem 'coffee-rails', '~> 4.2'
