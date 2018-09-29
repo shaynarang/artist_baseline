@@ -2,7 +2,7 @@
   <div class="pure-u-1-1">
     <h1><%= @page&.title %></h1>
 
-    <% @page&.sections&.order(:priority).each do |section| %>
+    <% @page&.sections&.order(:position).each do |section| %>
       <%= section.content.html_safe %>
     <% end %>
 

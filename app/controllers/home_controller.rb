@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @pages = Page.order(:priority)
+    @pages = Page.order(:position)
   end
 
   def display_content
