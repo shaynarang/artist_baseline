@@ -11,7 +11,7 @@
       <% @page&.sections&.order(:position).each do |section| %>
         <% case section.kind %>
         <% when 'Photo' %>
-          <p><%= image_tag(section.photos[0].image.url(:thumb)) %></p>
+          <p><%= image_tag(section.photos[0].image.url(:medium)) %></p>
         <% when 'Snippet' %>
           <p><%= section.content.html_safe %></p>
         <% when 'Text' %>
