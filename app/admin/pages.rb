@@ -57,4 +57,28 @@ ActiveAdmin.register Page do
       f.action(:submit)
     end
   end
+
+  controller do
+    def publish
+      page = Page.find(params[:id])
+      notice = "#{page.title} published!"
+      begin
+        page.toggle!(:published)
+      rescue ActiveRecord::RecordInvalid => error
+        return redirect_back(:fallback_location => admin_pages_path, :alert => error)
+      end
+      redirect_back(:fallback_location => admin_pages_path, :notice => notice)
+    end
+
+    def unpublish
+      page = Page.find(params[:id])
+      notice = "#{page.title} unpublished!"
+      begin
+        page.toggle!(:published)
+      rescue ActiveRecord::RecordInvalid => error
+        return redirect_back(:fallback_location => admin_pages_path, :alert => error)
+      end
+      redirect_back(:fallback_location => admin_pages_path, :notice => notice)
+    end
+  end
 end
