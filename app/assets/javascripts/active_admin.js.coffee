@@ -23,4 +23,6 @@ $ ->
 
   $(document).on 'change', 'select.section_kind_select', toggleInputs
 
+  $(document).on 'click', 'a.has_many_add', prepareInputs
+
   prepareInputs()
