@@ -35,7 +35,7 @@ ActiveAdmin.register Page do
       s.input :kind, :as => :select, :collection => Section::KINDS, :include_blank => false, :input_html => { class: 'section_kind_select'}
       s.input :content, :input_html => { class: 'content_text_area'}
 
-      s.has_many :photos, new_record: false do |p|
+      s.has_many :photos do |p|
         p.input :image, :label => 'Upload Image'
         p.input :remote_image_url, :label => 'Paste Image URL', :hint => (image_tag(p.object.image.url(:thumb)) if p.object.image && !p.object.image.url.blank?)
         p.input :_destroy, as: :boolean, required: :false, label: 'Remove image'
