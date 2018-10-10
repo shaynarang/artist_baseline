@@ -11,7 +11,9 @@
       <% @page&.sections&.order(:position).each do |section| %>
         <% case section.kind %>
         <% when 'Photo' %>
-          <p><%= image_tag(section.photos[0].image.url(:medium)) %></p>
+          <% if section&.photos[0]&.image&.url %>
+            <p><%= image_tag(section.photos[0].image.url(:medium)) %></p>
+          <% end %>
         <% when 'Snippet' %>
           <p><%= section.content.html_safe %></p>
         <% when 'Text' %>
