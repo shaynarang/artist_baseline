@@ -9,7 +9,13 @@ ActiveAdmin.register Page do
 
   index as: :reorderable_table do
     column :title
-    actions
+    actions do |page|
+      if page.published
+        link_to 'Unpublish', unpublish_page_path(page), :class => 'member_link'
+      else
+        link_to 'Publish', publish_page_path(page), :class => 'member_link'
+      end
+    end
   end
 
   show do
