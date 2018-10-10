@@ -17,9 +17,15 @@ ActiveAdmin.register Page do
       row :title
       if page.sections.any?
         panel 'Sections' do
-          reorderable_table_for page.sections.order(:position) do
+          sections = page.sections.order(:position)
+          reorderable_table_for sections do |section|
             column :kind
             column :content
+            column :photos do |section|
+              if section.photos.any?
+                image_tag(section.photos[0]&.image&.url(:thumb))
+              end
+            end
           end
         end
       end
