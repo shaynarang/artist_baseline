@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_194414) do
+ActiveRecord::Schema.define(version: 2018_10_09_224652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,21 +41,21 @@ ActiveRecord::Schema.define(version: 2018_09_29_194414) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "content"
-    t.string "imageable_type"
-    t.bigint "imageable_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
-    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
-  end
-
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "image"
+    t.string "imageable_type"
+    t.bigint "imageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_id", "imageable_type"], name: "index_photos_on_imageable_id_and_imageable_type"
+    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable_type_and_imageable_id"
   end
 
   create_table "posts", force: :cascade do |t|
