@@ -20,10 +20,13 @@ ActiveAdmin.register Page do
           sections = page.sections.order(:position)
           reorderable_table_for sections do |section|
             column :kind
-            column :content
-            column :photos do |section|
-              if section.photos.any?
+            column :content do |section|
+              if section.kind == 'Snippet'
+                section.content.html_safe
+              elsif section.kind == 'Photo' && section.photos.any?
                 image_tag(section.photos[0]&.image&.url(:thumb))
+              else
+                section.content
               end
             end
           end
