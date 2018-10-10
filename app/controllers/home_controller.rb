@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @pages = Page.order(:position)
+    @pages = Page.published.order(:position)
   end
 
   def display_content
