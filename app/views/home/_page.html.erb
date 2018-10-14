@@ -18,6 +18,8 @@
           <p><%= section.content.html_safe %></p>
         <% when 'Text' %>
           <p><%= section.content %></p>
+        <% when 'Posts' %>
+          <%= render partial: 'home/posts' %>
         <% end %>
       <% end %>
 

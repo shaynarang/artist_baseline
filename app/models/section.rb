@@ -10,7 +10,7 @@ class Section < ActiveRecord::Base
 
   validate :presence_of_content_or_photos
 
-  KINDS = %w(Photo Snippet Text)
+  KINDS = %w(Photo Snippet Text Posts)
 
   private
 
@@ -26,7 +26,7 @@ class Section < ActiveRecord::Base
   end
 
   def presence_of_content_or_photos
-    return if self.content.present? || self.photos.any?
-    errors.add(:base, 'Please add some text, a snippet, or a photo')
+    return if self.content.present? || self.photos.any? || self.kind == 'Posts'
+    errors.add(:base, 'Please add some text, a snippet, a photo, or posts')
   end
 end

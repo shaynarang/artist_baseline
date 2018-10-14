@@ -31,6 +31,8 @@ ActiveAdmin.register Page do
                 section.content.html_safe
               elsif section.kind == 'Photo' && section.photos.any?
                 image_tag(section.photos[0]&.image&.url(:thumb))
+              elsif section.kind == 'Posts'
+                'This section will display the posts you create from the Posts section'
               else
                 section.content
               end
