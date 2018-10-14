@@ -8,7 +8,7 @@ class Section < ActiveRecord::Base
 
   before_update :remove_content, :remove_photos
 
-  validate :presence_of_content_or_photos
+  validate :presence_of_content
 
   KINDS = %w(Photo Snippet Text Posts)
 
@@ -25,7 +25,7 @@ class Section < ActiveRecord::Base
     self.photos.map(&:save)
   end
 
-  def presence_of_content_or_photos
+  def presence_of_content
     return if self.content.present? || self.photos.any? || self.kind == 'Posts'
     errors.add(:base, 'Please add some text, a snippet, a photo, or posts')
   end
