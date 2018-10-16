@@ -4,6 +4,10 @@
 
 body {
   nav {
+    position: fixed;
+    z-index: 2;
+    width: inherit;
+
     ul {
       margin: 0;
       padding: 0;
@@ -27,8 +31,12 @@ body {
       }
     }
 
-    button {
-      float: right;
+    .hamburger-container {
+      text-align: right;
+
+      button {
+        background: white;
+      }
     }
   }
 
