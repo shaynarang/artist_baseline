@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
   def index
     @pages = Page.published.order(:position)
+    @page = @pages.first
+    @posts = Post.order('created_at DESC').all
+    @message = Message.new
   end
 
   def display_content
