@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_053616) do
+ActiveRecord::Schema.define(version: 2018_10_16_060727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,10 @@ ActiveRecord::Schema.define(version: 2018_10_10_053616) do
     t.integer "position"
     t.bigint "page_id"
     t.index ["page_id"], name: "index_sections_on_page_id"
+  end
+
+  create_table "sites", force: :cascade do |t|
+    t.string "title"
   end
 
   add_foreign_key "sections", "pages"
