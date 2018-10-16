@@ -1,13 +1,13 @@
 #= require active_admin/base
 #= require activeadmin_reorderable
 
-posts_message = 'This section will display posts. You can create them by clicking on the Posts tab at the top of the screen.'
-posts_message_html = '<p class="inline-hints posts-hint">' + posts_message + '</p>'
-
-contact_form_message = 'This section will display the contact form.'
-contact_form_html = '<p class="inline-hints contact-form-hint">' + contact_form_message + '</p>'
-
 $ ->
+  posts_message = 'This section will display posts. You can create them by clicking on the Posts tab at the top of the screen.'
+  posts_message_html = '<p class="inline-hints posts-hint">' + posts_message + '</p>'
+
+  contact_form_message = 'This section will display the contact form.'
+  contact_form_html = '<p class="inline-hints contact-form-hint">' + contact_form_message + '</p>'
+
   toggleInputs = ->
     content_input = $(this).parent().next()
     photo_input = $(this).parent().next().next()
