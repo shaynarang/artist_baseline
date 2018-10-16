@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development? && !AdminUser.exists?(email: 'admin@example.com')
 
+Site.create!(title: 'Your Site')
+
 Page.create!(title: 'News') unless Page.exists?(title: 'News')
 
 Page.create!(title: 'Contact') unless Page.exists?(title: 'Contact')
