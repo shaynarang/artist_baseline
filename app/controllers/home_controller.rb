@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @site = Site.first
     @pages = Page.published.order(:position)
     @page = @pages.first
     @posts = Post.order('created_at DESC').all
