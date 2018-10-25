@@ -11,8 +11,9 @@ class Theme < ActiveRecord::Base
   def unpublish_theme
     # if a theme has newly been marked as published
     # we need to unmark any old published theme
-    return unless self.published
-    published_themes = self.site.themes.published
-    published_themes[0].toggle!(:published) if published_themes.any?
+    return unless published
+    other_published_themes = site.themes.published.where.not(id: self)
+    return unless other_published_themes.any?
+    other_published_themes[0].toggle!(:published)
   end
 end
