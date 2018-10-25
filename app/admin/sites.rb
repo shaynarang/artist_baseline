@@ -4,7 +4,7 @@ ActiveAdmin.register Site do
   config.filters = false
   actions :index, :show, :edit, :update
 
-  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy], :themes_attributes => [:id, :name, :font_url, :nav_background_color, :nav_text_color, :main_background_color, :content_background_color, :content_text_color, :border_color, :published, :_destroy]
+  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy], :themes_attributes => [:id, :name, :font_url, :font_family, :nav_background_color, :nav_text_color, :main_background_color, :content_background_color, :content_text_color, :border_color, :published, :_destroy]
 
   index do
     column :title
@@ -35,12 +35,13 @@ ActiveAdmin.register Site do
     f.has_many :themes do |t|
       t.input :name
       t.input :font_url
-      t.input :nav_background_color
-      t.input :nav_text_color
-      t.input :main_background_color
-      t.input :content_background_color
-      t.input :content_text_color
-      t.input :border_color
+      t.input :font_family
+      t.input :nav_background_color, as: :string
+      t.input :nav_text_color, as: :string
+      t.input :main_background_color, as: :string
+      t.input :content_background_color, as: :string
+      t.input :content_text_color, as: :string
+      t.input :border_color, as: :string
       t.input :published, as: :boolean, required: :false, label: 'Publish'
       t.input :_destroy, as: :boolean, required: :false, label: 'Remove'
     end
