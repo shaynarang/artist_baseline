@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_16_060727) do
+ActiveRecord::Schema.define(version: 2018_10_25_041118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,5 +79,12 @@ ActiveRecord::Schema.define(version: 2018_10_16_060727) do
     t.string "title"
   end
 
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "site_id"
+    t.index ["site_id"], name: "index_themes_on_site_id"
+  end
+
   add_foreign_key "sections", "pages"
+  add_foreign_key "themes", "sites"
 end
