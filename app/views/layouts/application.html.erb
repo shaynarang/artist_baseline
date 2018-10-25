@@ -6,6 +6,10 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% unless @theme.nil? %>
+      <%= render 'layouts/site_theme', theme: @theme %>
+    <% end %>
   </head>
 
   <body>

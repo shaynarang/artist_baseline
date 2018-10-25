@@ -1,0 +1,47 @@
+<style>
+  <% if @theme.font_url? && @theme.font_family? %>
+    @import url(<%= @theme.font_url %>);
+
+    body h1, div {
+      font-family: <%= @theme.font_family %>, sans-serif;
+    }
+  <% end %>
+
+  <% if @theme.nav_background_color? %>
+    #nav-ul {
+      background-color: <%= @theme.nav_background_color %>;
+    }
+  <% end %>
+
+  <% if @theme.nav_text_color? %>
+    nav a {
+      color: <%= @theme.nav_text_color %>;
+    }
+  <% end %>
+
+  <% if @theme.main_background_color? %>
+    body {
+      background-color: <%= @theme.main_background_color %>;
+    }
+  <% end %>
+
+  <% if @theme.content_background_color? %>
+    #content {
+      background-color: <%= @theme.content_background_color %>;
+    }
+  <% end %>
+
+  <% if @theme.content_text_color? %>
+    #content {
+      color: <%= @theme.content_text_color %>;
+    }
+  <% end %>
+
+  <% if @theme.border_color? %>
+    #content {
+      border-color: <%= @theme.border_color %>;
+    }
+  <% end %>
+
+  "font_url", "nav_background_color", "nav_text_color", "main_background_color", "content_background_color", "content_text_color", "border_color"
+</style>
