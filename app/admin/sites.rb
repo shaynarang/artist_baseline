@@ -4,7 +4,7 @@ ActiveAdmin.register Site do
   config.filters = false
   actions :index, :show, :edit, :update
 
-  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy]
+  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy], :themes_attributes => [:id, :name, :_destroy]
 
   index do
     column :title
@@ -12,6 +12,10 @@ ActiveAdmin.register Site do
       if sites[0].photos.any?
         image_tag(sites[0].photos[0]&.image&.url(:thumb))
       end
+    end
+    column :themes do
+      themes = sites[0].themes
+      themes.pluck(:name).join(', ')
     end
     actions
   end
@@ -28,6 +32,11 @@ ActiveAdmin.register Site do
       p.input :_destroy, as: :boolean, required: :false, label: 'Remove image'
     end
 
+    f.has_many :themes do |t|
+      t.input :name
+      t.input :_destroy, as: :boolean, required: :false, label: 'Remove theme'
+    end
+
     f.actions do
       f.cancel_link(:back)
       f.action(:submit)
@@ -40,6 +49,11 @@ ActiveAdmin.register Site do
       row :logo do
         if site.photos.any?
           image_tag(site.photos[0]&.image&.url(:thumb))
+        end
+      end
+      row :themes do
+        if site.themes.any?
+          site.themes.pluck(:name).join(', ')
         end
       end
     end
