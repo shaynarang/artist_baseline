@@ -13,9 +13,9 @@ ActiveAdmin.register Site do
         image_tag(sites[0].photos[0]&.image&.url(:thumb))
       end
     end
-    column :themes do
-      themes = sites[0].themes
-      themes.pluck(:name).join(', ')
+    column :theme do
+      themes = sites[0].themes.published
+      themes[0].name if themes.any?
     end
     actions
   end
@@ -59,10 +59,9 @@ ActiveAdmin.register Site do
           image_tag(site.photos[0]&.image&.url(:thumb))
         end
       end
-      row :themes do
-        if site.themes.any?
-          site.themes.pluck(:name).join(', ')
-        end
+      row :theme do
+        themes = site.themes.published
+        themes[0].name if themes.any?
       end
     end
   end
