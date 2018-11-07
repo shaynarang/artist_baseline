@@ -1,6 +1,5 @@
 ActiveAdmin.register Site do
   menu label: 'Site Details'
-  config.clear_action_items!
   config.filters = false
   actions :index, :show, :edit, :update
 
