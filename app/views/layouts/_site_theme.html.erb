@@ -39,9 +39,23 @@
 
   <% if @theme.border_color? %>
     #content {
-      border-color: <%= @theme.border_color %>;
+      -webkit-box-shadow: inset 12px 12px 0 0 <%= @theme.border_color %>;
+      -moz-box-shadow:    inset 12px 12px 0 0 <%= @theme.border_color %>;
+      box-shadow:         inset 12px 12px 0 0 <%= @theme.border_color %>;
+    }
+
+    input:focus, textarea:focus {
+      -webkit-box-shadow: inset 4px 4px 0 0 <%= @theme.border_color %>;
+      -moz-box-shadow:    inset 4px 4px 0 0 <%= @theme.border_color %>;
+      box-shadow:         inset 4px 4px 0 0 <%= @theme.border_color %>;
+    }
+
+    div.section:not(:last-of-type) {
+      border-bottom: 1px solid <%= @theme.border_color %>;
+    }
+
+    div.post:not(:last-of-type) {
+      border-bottom: 1px solid <%= @theme.border_color %>;
     }
   <% end %>
-
-  "font_url", "nav_background_color", "nav_text_color", "main_background_color", "content_background_color", "content_text_color", "border_color"
 </style>
