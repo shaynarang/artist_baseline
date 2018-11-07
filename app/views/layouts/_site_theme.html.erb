@@ -9,6 +9,7 @@
 
   <% if @theme.nav_background_color? %>
     #nav-ul {
+      border: none;
       background-color: <%= @theme.nav_background_color %>;
     }
   <% end %>
@@ -38,10 +39,21 @@
   <% end %>
 
   <% if @theme.border_color? %>
+    #nav-ul {
+      -webkit-box-shadow: inset 0 6px 0 0 <%= @theme.border_color %>;
+      -moz-box-shadow:    inset 0 6px 0 0 <%= @theme.border_color %>;
+      box-shadow:         inset 0 6px 0 0 <%= @theme.border_color %>;
+    }
+
     #content {
+      border: none !important;
       -webkit-box-shadow: inset 12px 12px 0 0 <%= @theme.border_color %>;
       -moz-box-shadow:    inset 12px 12px 0 0 <%= @theme.border_color %>;
       box-shadow:         inset 12px 12px 0 0 <%= @theme.border_color %>;
+    }
+
+    input, textarea {
+      border: none !important;
     }
 
     input:focus, textarea:focus {
