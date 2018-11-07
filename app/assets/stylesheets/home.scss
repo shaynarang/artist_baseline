@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
+  h1 {
+    text-align: center;
+  }
+
   nav {
     position: fixed;
     z-index: 2;
@@ -98,6 +102,8 @@ body {
   }
 
   .actions {
+    text-align: center;
+
     input[type='submit'] {
       height: 50px;
       width: 120px;
