@@ -26,7 +26,10 @@ class Section < ActiveRecord::Base
   end
 
   def presence_of_content
-    return if self.content.present? || self.photos.any? || self.kind == 'Posts' || self.kind == 'Contact Form'
+    return if self.content.present?
+    return if self.photos.any?
+    return if self.kind == 'Posts'
+    return if self.kind == 'Contact Form'
     errors.add(:base, 'Please add some text, a snippet, a photo, or posts')
   end
 end
