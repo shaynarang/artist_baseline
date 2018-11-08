@@ -27,15 +27,14 @@ body {
         font-size: 22px;
         align-items: center;
         display: flex;
-        justify-content: center;
-      }
-
-      li:hover {
-        background: purple;
       }
 
       a {
         text-decoration: none;
+        display:        flex;
+        flex-grow:      1;
+        flex-shrink:    1;
+        justify-content: center;
       }
     }
 
