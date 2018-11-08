@@ -1,25 +1,19 @@
 <div class="pure-g">
-  <div class="pure-u-1-5 page-margin"></div>
-  <div class="pure-u-1-1 pure-u-sm-1-1 pure-u-md-3-5">
-    <nav class="pure-g">
-      <div class="pure-u-1-1">
-        <ul id="nav-ul">
-          <div class="div-padding">
-            <% @pages&.each do |page| %>
-              <li><%= link_to page.title, display_content_path(page_name: 'page', page_id: page.id), :remote => true %></li>
-            <% end %>
-          </div>
-        </ul>
-      </div>
+  <div class="pure-u-md-1-12 pure-u-lg-1-6 page-margin"></div>
+  <div class="pure-u-1-1 pure-u-md-5-6 pure-u-lg-2-3">
+    <nav>
+      <ul id="nav-ul">
+        <% @pages&.each do |page| %>
+          <li><%= link_to page.title, display_content_path(page_name: 'page', page_id: page.id), :remote => true %></li>
+        <% end %>
+      </ul>
 
-      <div class="pure-u-1-1">
-        <div class="div-padding hamburger-container">
-          <button class="hamburger hamburger--emphatic" type="button">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </button>
-        </div>
+      <div class="hamburger-container">
+        <button class="hamburger hamburger--emphatic" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
     </nav>
 
@@ -39,5 +33,5 @@
       </div>
     </div>
   </div>
-  <div class="pure-u-1-5 page-margin"></div>
+  <div class="pure-u-md-1-12 pure-u-lg-1-6 page-margin"></div>
 </div>

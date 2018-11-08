@@ -2,7 +2,7 @@
   <% if @theme.font_url? && @theme.font_family? %>
     @import url(<%= @theme.font_url %>);
 
-    body h1, div {
+    body h1, div, li {
       font-family: <%= @theme.font_family %>, sans-serif;
     }
   <% end %>
@@ -39,12 +39,6 @@
   <% end %>
 
   <% if @theme.border_color? %>
-    #nav-ul {
-      -webkit-box-shadow: inset 0 6px 0 0 <%= @theme.border_color %>;
-      -moz-box-shadow:    inset 0 6px 0 0 <%= @theme.border_color %>;
-      box-shadow:         inset 0 6px 0 0 <%= @theme.border_color %>;
-    }
-
     #content {
       border: none !important;
       -webkit-box-shadow: inset 12px 12px 0 0 <%= @theme.border_color %>;

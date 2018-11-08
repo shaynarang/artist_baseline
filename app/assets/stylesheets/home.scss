@@ -11,12 +11,11 @@ body {
     position: fixed;
     z-index: 2;
     width: inherit;
-    top: 30px;
 
     ul {
-      margin: 0;
+      width: inherit;
       padding: 0;
-      width: 60%;
+      margin: 0;
       border: 1px solid black;
       background: white;
       position: fixed;
@@ -24,11 +23,15 @@ body {
       list-style-type: none;
 
       li {
-        text-align: center;
+        height: 64px;
+        font-size: 22px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
 
-      li:not(:last-child) {
-        padding-bottom: 10px;
+      li:hover {
+        background: purple;
       }
 
       a {
@@ -43,11 +46,6 @@ body {
         background: white;
       }
     }
-  }
-
-  .div-padding {
-    padding: 2% 3%;
-    margin: 0;
   }
 
   #content {
