@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_065151) do
+ActiveRecord::Schema.define(version: 2018_11_08_065852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_065151) do
     t.string "border_color"
     t.boolean "published", default: false
     t.string "font_family"
+    t.string "nav_hover_background_color"
     t.index ["site_id"], name: "index_themes_on_site_id"
   end
 

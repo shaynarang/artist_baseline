@@ -14,6 +14,12 @@
     }
   <% end %>
 
+  <% if @theme.nav_hover_background_color? %>
+    #nav-ul li:hover {
+      background: <%= @theme.nav_hover_background_color %>;
+    }
+  <% end %>
+
   <% if @theme.nav_text_color? %>
     nav a {
       color: <%= @theme.nav_text_color %>;

@@ -3,7 +3,7 @@ ActiveAdmin.register Site do
   config.filters = false
   actions :index, :show, :edit, :update
 
-  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy], :themes_attributes => [:id, :name, :font_url, :font_family, :nav_background_color, :nav_text_color, :main_background_color, :content_background_color, :content_text_color, :border_color, :published, :_destroy]
+  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy], :themes_attributes => [:id, :name, :font_url, :font_family, :nav_background_color, :nav_hover_background_color, :nav_text_color, :main_background_color, :content_background_color, :content_text_color, :border_color, :published, :_destroy]
 
   index do
     column :title
@@ -36,6 +36,7 @@ ActiveAdmin.register Site do
       t.input :font_url
       t.input :font_family
       t.input :nav_background_color, as: :string
+      t.input :nav_hover_background_color, as: :string
       t.input :nav_text_color, as: :string
       t.input :main_background_color, as: :string
       t.input :content_background_color, as: :string
