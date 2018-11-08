@@ -54,7 +54,7 @@ $ ->
         contact_form_li = content_li.prev()
         content_li.hide()
         if contact_form_li.find('p.contact-form-hint').length == 0
-          contact_form_li.append(posts_message_html)
+          contact_form_li.append(contact_form_html)
 
   $(document).on 'change', 'select.section_kind_select', toggleInputs
 
