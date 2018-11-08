@@ -49,7 +49,6 @@ body {
 
   #content {
     padding: 3% 7%;
-    letter-spacing: normal;
     border: 1px solid black;
 
     h1 {
@@ -123,6 +122,18 @@ div {
 
   .section:last-of-type {
     margin-bottom: 25px;
+  }
+
+  .image-container {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+
+    img {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
   }
 }
 

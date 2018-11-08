@@ -1,0 +1,19 @@
+<div class='pure-g'>
+  <% if photos.count > 1 %>
+    <% photos.each do |photo| %>
+      <% if photo&.image&.url %>
+        <div class="pure-u-md-1-2 pure-u-lg-1-2 image-container">
+          <%= image_tag(photo.image.url(:medium)) %>
+        </div>
+      <% end %>
+    <% end %>
+  <% else %>
+    <% photos.each do |photo| %>
+      <% if photo&.image&.url %>
+        <div class="image-container">
+          <%= image_tag(photo.image.url(:medium)) %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
