@@ -1,8 +1,22 @@
 <style>
+  <% if @theme.title_font_url? && @theme.title_font_family? %>
+    @import url(<%= @theme.font_url %>);
+
+    #logo h1 {
+      font-family: <%= @theme.title_font_family %>, sans-serif;
+    }
+  <% end %>
+
+  <% if @theme.title_font_color %>
+    #logo h1 {
+      color: <%= @theme.title_font_color %>;
+    }
+  <% end %>
+
   <% if @theme.font_url? && @theme.font_family? %>
     @import url(<%= @theme.font_url %>);
 
-    body h1, div, li {
+    #content h1, #content div, a {
       font-family: <%= @theme.font_family %>, sans-serif;
     }
   <% end %>
@@ -54,6 +68,9 @@
 
     input, textarea {
       border: none !important;
+      -webkit-box-shadow: inset 2px 2px 0 0 <%= @theme.border_color %>;
+      -moz-box-shadow:    inset 2px 2px 0 0 <%= @theme.border_color %>;
+      box-shadow:         inset 2px 2px 0 0 <%= @theme.border_color %>;
     }
 
     input:focus, textarea:focus {
