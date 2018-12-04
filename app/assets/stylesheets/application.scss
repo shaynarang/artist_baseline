@@ -15,5 +15,9 @@
  *= require_tree .
  *= require_self
  */
+
+ $hamburger-layer-height: 10px;
+ $hamburger-layer-width: 60px;
+ $hamburger-layer-border-radius: none;
  
  @import "hamburgers";
