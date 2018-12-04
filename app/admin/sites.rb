@@ -1,9 +1,9 @@
 ActiveAdmin.register Site do
-  menu label: 'Site Details'
+  menu label: 'Theme'
   config.filters = false
   actions :index, :show, :edit, :update
 
-  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy], :themes_attributes => [:id, :name, :font_url, :font_family, :nav_background_color, :nav_hover_background_color, :nav_text_color, :main_background_color, :content_background_color, :content_text_color, :border_color, :published, :_destroy]
+  permit_params :title, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy], :themes_attributes => [:id, :name, :title_font_url, :title_font_family, :title_font_color, :font_url, :font_family, :nav_background_color, :nav_hover_background_color, :nav_text_color, :main_background_color, :content_background_color, :content_text_color, :border_color, :published, :_destroy]
 
   index do
     column :title
@@ -33,6 +33,9 @@ ActiveAdmin.register Site do
 
     f.has_many :themes do |t|
       t.input :name
+      t.input :title_font_url
+      t.input :title_font_family
+      t.input :title_font_color, as: :string
       t.input :font_url
       t.input :font_family
       t.input :nav_background_color, as: :string

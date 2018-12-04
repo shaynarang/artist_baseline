@@ -5,7 +5,7 @@ ActiveAdmin.register Page do
 
   config.filters = false
 
-  permit_params :title, :position, :sections_attributes => [:id, :kind, :content, :position, :_destroy, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy]]
+  permit_params :title, :no_title, :position, :sections_attributes => [:id, :kind, :content, :position, :_destroy, :photos_attributes => [:id, :imageable_id, :imageable_type, :image, :remote_image_url, :_destroy]]
 
   index as: :reorderable_table do
     column :title
@@ -49,6 +49,7 @@ ActiveAdmin.register Page do
     f.inputs "Page Details" do
       li f.semantic_errors *f.object.errors.keys
       f.input :title
+      f.input :no_title
     end
     f.has_many :sections, :multipart => true, sortable: :position, sortable_start: 1 do |s|
       s.input :kind, :as => :select, :collection => Section::KINDS, :include_blank => false, :input_html => { class: 'section_kind_select'}

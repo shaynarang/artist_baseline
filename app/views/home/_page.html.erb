@@ -1,5 +1,7 @@
 <div class="pure-u-1">
-  <h1><%= @page&.title %></h1>
+  <% unless @page.no_title %>
+    <h1><%= @page&.title %></h1>
+  <% end %>
 
   <% @page&.sections&.order(:position).each do |section| %>
     <div class='section'>
