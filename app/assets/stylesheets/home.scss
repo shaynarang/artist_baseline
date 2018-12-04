@@ -24,7 +24,7 @@ body {
 
       li {
         height: 64px;
-        font-size: 22px;
+        font-size: 35px;
         align-items: center;
         display: flex;
       }
@@ -48,8 +48,9 @@ body {
   }
 
   #content {
-    padding: 3% 8.35%;
-    border: 1px solid black;
+    font-size: 22px;
+    padding: 6% 8.35% 1%;
+    min-height: 480px;
 
     h1 {
       margin-bottom: 30px;
@@ -67,6 +68,7 @@ body {
   }
 
   p {
+    line-height: 1.5;
     text-align: justify;
   }
 
@@ -78,6 +80,7 @@ body {
       width: 100%;
       color: black;
       padding: 12px;
+      border: 1px solid black;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -138,8 +141,10 @@ div {
 }
 
 #logo {
-  padding: 20px 0;
   text-align: center;
+  h1 {
+    font-size: 75px;
+  }
 }
 
 @media screen and (max-width: 48em) {
