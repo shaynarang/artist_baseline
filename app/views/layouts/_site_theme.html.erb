@@ -23,7 +23,6 @@
 
   <% if @theme.nav_background_color? %>
     #nav-ul {
-      border: none;
       background-color: <%= @theme.nav_background_color %>;
     }
   <% end %>
@@ -88,3 +87,12 @@
     }
   <% end %>
 </style>
+
+<script>
+  $(document).ready(function(){
+    var nav_background_color = "<%= @theme.nav_background_color %>"
+    if (nav_background_color.length > 0) {
+      $('button.hamburger').css('background', nav_background_color)
+    }
+  });
+</script>
