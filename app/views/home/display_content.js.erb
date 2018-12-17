@@ -1,4 +1,4 @@
 $(".notice, .alert").hide();
 $("#content").hide();
 $("#content").html("<%= escape_javascript(render partial: @page_name, locals: { page: @page }) %>");
-$("#content").slideToggle("medium");
+$("#content").fadeToggle("medium");
