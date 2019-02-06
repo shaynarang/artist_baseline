@@ -1,4 +1,4 @@
-module ApplicationHelper
+module ActiveAdmin::ApplicationHelper
   def variable_image_tag(photo, version, klass=nil)
     url = photo&.image&.url
     extension = File.extname(url)
@@ -7,7 +7,7 @@ module ApplicationHelper
     elsif extension == '.svg'
       inline_svg url, class: klass
     else
-      image_tag photo&.image&.url(version), class: klass
+      image_tag url(version), class: klass
     end
   end
 end
