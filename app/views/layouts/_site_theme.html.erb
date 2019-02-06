@@ -2,7 +2,7 @@
   <% if @theme.title_font_url? && @theme.title_font_family? %>
     @import url(<%= @theme.font_url %>);
 
-    #logo h1 {
+    #title h1 {
       font-family: <%= @theme.title_font_family %>, sans-serif;
     }
   <% end %>
@@ -41,6 +41,10 @@
 
   <% if @theme.main_background_color? %>
     body {
+      background-color: <%= @theme.main_background_color %>;
+    }
+
+    input, textarea {
       background-color: <%= @theme.main_background_color %>;
     }
   <% end %>

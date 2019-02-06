@@ -7,6 +7,11 @@ body {
     text-align: center;
   }
 
+  #header {
+    margin: 1em 0;
+    display: inline-block;
+  }
+
   nav {
     position: fixed;
     z-index: 2;
@@ -141,10 +146,18 @@ div {
 }
 
 #logo {
-  text-align: center;
   h1 {
     font-size: 75px;
   }
+}
+
+.logo-image {
+  width: 10em;
+  height: 10em;
+}
+
+#title h1 {
+  margin: 0;
 }
 
 @media screen and (max-width: 48em) {
