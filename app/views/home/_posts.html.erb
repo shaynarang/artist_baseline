@@ -1,10 +1,10 @@
 <div class="pure-u-1">
   <% @posts&.each do |post| %>
     <div class="post">
-      <p>Date: <%= post.created_at %></p>
+      <p>Date: <%= post.created_at.strftime('%B %d, %Y') %></p>
       <p>Title: <%= post.title %></p>
       <p>Author: <%= post.author %></p>
-      <p>Content: <%= post.content %></p>
+      <p><%= post.content %></p>
     </div>
   <% end %>
 </div>
