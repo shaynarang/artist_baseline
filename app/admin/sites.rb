@@ -9,7 +9,8 @@ ActiveAdmin.register Site do
     column :title
     column :logo do
       if sites[0].photos.any?
-        image_tag(sites[0].photos[0]&.image&.url(:thumb))
+        photo = sites[0].photos[0]
+        variable_image_tag(photo, :thumb, 'logo-image')
       end
     end
     column :theme do
@@ -27,7 +28,7 @@ ActiveAdmin.register Site do
 
     f.has_many :photos, heading: 'Logo' do |p|
       p.input :image, :label => 'Upload Image'
-      p.input :remote_image_url, :label => 'Paste Image URL', :hint => (image_tag(p.object.image.url(:thumb)) if p.object && p.object.image && !p.object.image.url.blank?)
+      p.input :remote_image_url, :label => 'Paste Image URL', :hint => (variable_image_tag(p.object.image, :thumb) if p.object && p.object.image && !p.object.image.url.blank?)
       p.input :_destroy, as: :boolean, required: :false, label: 'Remove image'
     end
 
@@ -60,7 +61,7 @@ ActiveAdmin.register Site do
       row :title
       row :logo do
         if site.photos.any?
-          image_tag(site.photos[0]&.image&.url(:thumb))
+          variable_image_tag(site.photos[0], :thumb, 'logo-image')
         end
       end
       row :theme do

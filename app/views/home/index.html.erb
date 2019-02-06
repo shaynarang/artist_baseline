@@ -18,12 +18,19 @@
     </nav>
 
     <div id="content-container">
-      <div id="logo">
-        <% if @site&.photos.any? %>
-          <%= image_tag @site.photos[0]&.image&.url(:thumb), height: '100' %>
-        <% else %>
+      <div id="header">
+        <div id="logo">
+          <% if @site&.photos.any? %>
+            <% photo = @site.photos[0] %>
+            <%= variable_image_tag(photo, :thumb, 'logo-image') %>
+          <% else %>
+            <h1><%= @site&.title || 'Your Site Title' %></h1>
+          <% end %>
+        </div>
+
+        <div id="title">
           <h1><%= @site&.title || 'Your Site Title' %></h1>
-        <% end %>
+        </div>
       </div>
 
       <div id="content">

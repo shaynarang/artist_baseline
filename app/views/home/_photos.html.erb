@@ -3,7 +3,7 @@
     <% photos.each do |photo| %>
       <% if photo&.image&.url %>
         <div class="pure-u-md-1-2 pure-u-lg-1-2 image-container">
-          <%= image_tag(photo.image.url(:medium)) %>
+          <%= variable_image_tag(photo, :medium) %>
         </div>
       <% end %>
     <% end %>
@@ -11,7 +11,7 @@
     <% photos.each do |photo| %>
       <% if photo&.image&.url %>
         <div class="image-container">
-          <%= image_tag(photo.image.url(:large)) %>
+          <%= variable_image_tag(photo, :large) %>
         </div>
       <% end %>
     <% end %>

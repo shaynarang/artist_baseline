@@ -30,7 +30,7 @@ ActiveAdmin.register Page do
               if section.kind == 'Snippet'
                 section.content.html_safe
               elsif section.kind == 'Photo' && section.photos.any?
-                image_tag(section.photos[0]&.image&.url(:thumb))
+                variable_image_tag(section.photos[0], :thumb)
               elsif section.kind == 'Posts'
                 '<span class="hint">This section will display the posts you create from the Posts section.</span>'.html_safe
               elsif section.kind == 'Contact Form'
