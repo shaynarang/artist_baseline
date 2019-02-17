@@ -62,11 +62,18 @@
   <% end %>
 
   <% if @theme.border_color? %>
-    #content {
+    /*#content {
       border: none !important;
       -webkit-box-shadow: inset 12px 12px 0 0 <%= @theme.border_color %>;
       -moz-box-shadow:    inset 12px 12px 0 0 <%= @theme.border_color %>;
       box-shadow:         inset 12px 12px 0 0 <%= @theme.border_color %>;
+    }*/
+
+    body {
+      border: none !important;
+      -webkit-box-shadow: inset 100px 0 0 0 <%= @theme.border_color %>, inset -100px 0 0 0 <%= @theme.border_color %>;
+      -moz-box-shadow:    inset 100px 0 0 0 <%= @theme.border_color %>, inset -100px 0 0 0 <%= @theme.border_color %>;
+      box-shadow:         inset 100px 0 0 0 <%= @theme.border_color %>, inset -100px 0 0 0 <%= @theme.border_color %>;
     }
 
     input, textarea {
