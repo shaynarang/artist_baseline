@@ -2,3 +2,39 @@ $(".notice, .alert").hide();
 $("#content").hide();
 $("#content").html("<%= escape_javascript(render partial: @page_name, locals: { page: @page }) %>");
 $("#content").fadeToggle("medium");
+
+// This script is responsible for blurring and focusing posts
+function resetBlur() {
+  $('.post').each(function() {
+    $(this).find('p').removeClass('blur');
+  });
+}
+
+function addBlur(exception) {
+  $('.post').not(exception).each(function() {
+    $(this).find('p').each(function() {
+      $(this).addClass('blur');
+    });
+  });
+}
+
+function retainFocus(exception) {
+  $('.focus').not(exception).each(function() {
+    $(this).find('.post-content').slideToggle();
+    $(this).toggleClass('focus');
+  });
+}
+
+$('.post').on('click', function(){
+  resetBlur();
+
+  if (!$(this).hasClass('focus')) {
+    exception = $(this)
+    retainFocus(exception);
+    addBlur(exception);
+  }
+
+  $(this).toggleClass('focus');
+
+  $(this).find('.post-content').slideToggle();
+});

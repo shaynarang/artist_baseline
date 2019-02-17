@@ -160,6 +160,27 @@ div {
   margin: 0;
 }
 
+.post-content {
+  display: none;
+}
+
+.post:hover {
+  cursor: pointer;
+}
+
+.blur {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+  }
+}
+
 @media screen and (max-width: 48em) {
   .page-margin {
     display: none;
