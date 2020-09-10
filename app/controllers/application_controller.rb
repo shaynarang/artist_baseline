@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   before_action :set_theme
 
   def set_theme
-    @theme = Site.first&.themes&.published[0]
+    published_theme = Site.first&.themes&.published
+    return unless published_theme.any?
+    @theme = published_theme[0]
   end
 end
