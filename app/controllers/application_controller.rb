@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def set_theme
     published_theme = Site.first&.themes&.published
-    return unless published_theme.any?
+    return unless published_theme&.any?
     @theme = published_theme[0]
   end
 end
