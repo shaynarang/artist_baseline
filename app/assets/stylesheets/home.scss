@@ -9,12 +9,12 @@ html {
 body {
 
   #footer {
+    position: absolute;
+    width: inherit;
     padding: 1%;
-
-    p {
-      letter-spacing: 4px;
-      text-align: center;
-    }
+    letter-spacing: 4px;
+    text-align: center;
+    margin-top: 25.5%;
   }
 
   nav {
@@ -79,7 +79,7 @@ body {
   }
 
   #content {
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
     padding-top: 14%;
 
@@ -198,7 +198,7 @@ div {
   }
 
   #content {
-    margin: 0 5%;
+    margin: 10% 2%;
   }
 
   h1#title {
