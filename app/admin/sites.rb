@@ -28,7 +28,7 @@ ActiveAdmin.register Site do
 
     f.has_many :photos, heading: 'Logo' do |p|
       p.input :image, :label => 'Upload Image'
-      p.input :remote_image_url, :label => 'Paste Image URL', :hint => (variable_image_tag(p.object.image, :thumb) if p.object && p.object.image && !p.object.image.url.blank?)
+      p.input :remote_image_url, :label => 'Paste Image URL', :hint => (variable_image_tag(p.object, :thumb) if p&.object&.image&.url)
       p.input :_destroy, as: :boolean, required: :false, label: 'Remove image'
     end
 
