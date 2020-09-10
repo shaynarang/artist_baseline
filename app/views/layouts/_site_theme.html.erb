@@ -2,13 +2,13 @@
   <% if @theme.title_font_url? && @theme.title_font_family? %>
     @import url(<%= @theme.font_url %>);
 
-    #title h1 {
+    h1#title {
       font-family: <%= @theme.title_font_family %>, sans-serif;
     }
   <% end %>
 
   <% if @theme.title_font_color %>
-    #logo h1 {
+    h1#title {
       color: <%= @theme.title_font_color %>;
     }
   <% end %>
@@ -16,7 +16,7 @@
   <% if @theme.font_url? && @theme.font_family? %>
     @import url(<%= @theme.font_url %>);
 
-    #content h1, #content div, a {
+    h1:not(#title), div, a, p {
       font-family: <%= @theme.font_family %>, sans-serif;
     }
   <% end %>
@@ -40,12 +40,12 @@
   <% end %>
 
   <% if @theme.main_background_color? %>
-    body {
+    body, input, textarea {
       background-color: <%= @theme.main_background_color %>;
     }
 
-    input, textarea {
-      background-color: <%= @theme.main_background_color %>;
+    h1#title, #footer {
+      color: <%= @theme.main_background_color %>;
     }
   <% end %>
 
@@ -59,15 +59,31 @@
     #content {
       color: <%= @theme.content_text_color %>;
     }
+
+    div.section:not(:last-of-type) {
+      border-bottom: 1px solid <%= @theme.content_text_color %> !important;
+    }
+
+    div.post:not(:last-of-type) {
+      border-bottom: 1px solid <%= @theme.content_text_color %> !important;
+    }
   <% end %>
 
   <% if @theme.border_color? %>
     /*#content {
       border: none !important;
-      -webkit-box-shadow: inset 12px 12px 0 0 <%= @theme.border_color %>;
-      -moz-box-shadow:    inset 12px 12px 0 0 <%= @theme.border_color %>;
-      box-shadow:         inset 12px 12px 0 0 <%= @theme.border_color %>;
+      -webkit-box-shadow: inset 3px 3px 0 0 <%= @theme.border_color %>;
+      -moz-box-shadow:    inset 3px 3px 0 0 <%= @theme.border_color %>;
+      box-shadow:         inset 3px 3px 0 0 <%= @theme.border_color %>;
     }*/
+
+    h1#title {
+      background-color: <%= @theme.border_color %>;
+    }
+
+    html {
+      background-color: <%= @theme.border_color %>;
+    }
 
     body {
       border: none !important;
@@ -87,6 +103,10 @@
       -webkit-box-shadow: inset 4px 4px 0 0 <%= @theme.border_color %>;
       -moz-box-shadow:    inset 4px 4px 0 0 <%= @theme.border_color %>;
       box-shadow:         inset 4px 4px 0 0 <%= @theme.border_color %>;
+    }
+
+    #footer {
+      background: <%= @theme.border_color %>;
     }
 
     div.section:not(:last-of-type) {
