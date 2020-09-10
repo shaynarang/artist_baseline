@@ -20,28 +20,17 @@
       </div>
     </nav>
 
-    <div id="content-container">
-      <div id="header">
-        <div id="logo">
-          <% if @site&.photos.any? %>
-            <% photo = @site.photos[0] %>
-            <%= variable_image_tag(photo, :thumb, 'logo-image') %>
-          <% else %>
-            <h1><%= @site&.title || 'Your Site Title' %></h1>
-          <% end %>
-        </div>
+    <h1 id="title"><%= @site&.title || 'Your Site Title' %></h1>
 
-        <div id="title">
-          <h1><%= @site&.title || 'Your Site Title' %></h1>
-        </div>
-      </div>
-
-      <div id="content">
-        <% if @page %>
-          <%= render partial: 'home/page', :locals => { page: @page } %>
-        <% end %>
-      </div>
+    <div id="content">
+      <% if @page %>
+        <%= render partial: 'home/page', :locals => { page: @page } %>
+      <% end %>
     </div>
   </div>
   <div class="pure-u-md-1-12 pure-u-lg-1-6 page-margin"></div>
+
+  <% if @site&.photos.any? %>
+    <%= variable_image_tag(@site.photos[0], :medium, 'logo-image') %>
+  <% end %>
 </div>
