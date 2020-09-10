@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <% if @site&.photos.any? %>
+  <% if @site&.photos&.any? %>
     <%= variable_image_tag(@site.photos[0], :medium, 'logo-image') %>
   <% end %>
 
