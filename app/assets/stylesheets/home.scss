@@ -2,25 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  h1 {
-    text-align: center;
-  }
+html {
+  padding-top: 3%;
+}
 
-  #header {
-    margin: 1em 0;
-    display: inline-block;
+body {
+
+  #footer {
+    padding: 1%;
+
+    p {
+      letter-spacing: 4px;
+      text-align: center;
+    }
   }
 
   nav {
     position: fixed;
-    z-index: 2;
     width: inherit;
+    z-index: 4;
 
     ul {
       width: inherit;
       padding: 0;
       margin: 0;
+      padding-bottom: 3%;
       border: none;
       background: white;
       position: fixed;
@@ -28,10 +34,15 @@ body {
       list-style-type: none;
 
       li {
-        height: 64px;
-        font-size: 35px;
+        height: 84px;
+        font-size: 200%;
         align-items: center;
         display: flex;
+        letter-spacing: 4px;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
 
       a {
@@ -52,18 +63,32 @@ body {
     }
   }
 
+  h1#title {
+    width: 52%;
+    float: left;
+    margin: 0;
+    padding: 16.5px 20px;
+    text-align: center;
+    letter-spacing: 6px;
+  }
+
+  .logo-image {
+    height: 363px;
+    width: 363px;
+    margin-left: calc(100% - 363px);
+  }
+
   #content {
     font-size: 22px;
-    padding: 6% 8.35% 1%;
-    min-height: 480px;
+    text-align: center;
+    padding-top: 14%;
 
     h1 {
-      margin-bottom: 30px;
+      font-size: 25px;
     }
 
     .section {
       align-items: center;
-      display: flex;
       justify-content: center;
     }
   }
@@ -81,11 +106,9 @@ body {
     padding-bottom: 2%;
 
     input, textarea {
-      margin-top: 1%;
+      margin: 2% 0;
       width: 100%;
-      color: black;
       padding: 12px;
-      border: 1px solid black;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -101,7 +124,6 @@ body {
 
     textarea {
       height: 108px;
-      border-color: #d8d8d8;
     }
   }
 
@@ -135,7 +157,7 @@ div {
   .image-container {
     text-align: center;
     padding: 0;
-    margin: -4px 0 0 0;
+    margin: -5px 0 0 0;
 
     img {
       width: 100%;
@@ -143,21 +165,6 @@ div {
       padding: 0;
     }
   }
-}
-
-#logo {
-  h1 {
-    font-size: 75px;
-  }
-}
-
-.logo-image {
-  width: 10em;
-  height: 10em;
-}
-
-#title h1 {
-  margin: 0;
 }
 
 .post-content {
@@ -181,12 +188,20 @@ div {
   }
 }
 
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 768px) {
+  html {
+    padding: 0;
+  }
+
   .page-margin {
     display: none;
   }
 
-  ul {
-    width: 100% !important;
+  #content {
+    margin: 0 5%;
+  }
+
+  h1#title {
+    letter-spacing: normal !important;
   }
 }
