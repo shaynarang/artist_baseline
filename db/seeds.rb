@@ -20,7 +20,8 @@ Page.first_or_create(title: 'News')
 Page.first_or_create(title: 'Contact')
 
 Theme.first_or_create(
-  site: Site.last,
+  name: 'Default',
+  site_id: Site.last.id,
   font_url: "https://fonts.googleapis.com/css?family=Arvo|Raleway|Roboto+Mono|Russo+One|Unlock",
   nav_background_color: "black",
   nav_text_color: "mintcream",
