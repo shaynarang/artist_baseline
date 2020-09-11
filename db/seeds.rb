@@ -6,20 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 if Rails.env.development?
-  AdminUser.find_or_create_by(
+  AdminUser.create!(
     email: 'admin@example.com',
     password: 'password',
     password_confirmation: 'password'
-  )
+  ) unless AdminUser.find_by(email: 'admin@example.com')
 end
 
-Site.find_or_create_by(title: 'Your Site')
+Site.first_or_create(title: 'Your Site')
 
-Page.find_or_create_by(title: 'News')
+Page.first_or_create(title: 'News')
 
-Page.find_or_create_by(title: 'Contact')
+Page.first_or_create(title: 'Contact')
 
-Theme.find_or_create_by(
+Theme.first_or_create(
   site: Site.last,
   font_url: "https://fonts.googleapis.com/css?family=Arvo|Raleway|Roboto+Mono|Russo+One|Unlock",
   nav_background_color: "black",
