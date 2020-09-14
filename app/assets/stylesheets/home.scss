@@ -8,7 +8,6 @@ h1#title {
 }
 
 nav {
-  height: 100%;
   z-index: 4;
 
   .hamburger-container {
@@ -31,7 +30,6 @@ nav {
 
     li {
       padding: 0;
-      margin: 0;
       height: 84px;
       align-items: center;
       display: flex;
@@ -168,15 +166,23 @@ div {
   }
 
   h1#title {
-    font-size: 250% !important;
+    font-size: 275% !important;
   }
 
   nav ul {
-    font-size: 250% !important;
+    font-size: 275% !important;
+
+    li {
+      margin-top: 7% !important;
+    }
   }
 
   #content {
-    font-size: 225% !important;
+    font-size: 250% !important;
+  }
+
+  input, textarea {
+    margin-bottom: 10% !important;
   }
 }
 
