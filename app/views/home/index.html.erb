@@ -1,16 +1,10 @@
 <div class="pure-g">
-  <div class="pure-u-md-1-12 pure-u-lg-1-8 page-margin"></div>
-  <div class="pure-u-1 pure-u-md-5-6 pure-u-lg-3-4">
+  <header class="pure-u-1">
+    <h1 id="title">
+      <%= @site&.title || 'Your Site Title' %>
+    </h1>
 
     <nav>
-      <ul id="nav-ul">
-        <% @pages&.each do |page| %>
-          <%= link_to display_content_path(page_name: 'page', page_id: page.id), :remote => true do %>
-            <li><%= page.title %></li>
-          <% end %>
-        <% end %>
-      </ul>
-
       <div class="hamburger-container">
         <button class="hamburger hamburger--emphatic" type="button">
           <span class="hamburger-box">
@@ -18,20 +12,29 @@
           </span>
         </button>
       </div>
+
+      <ul id="nav-ul">
+        <% @pages&.each do |page| %>
+          <% path = display_content_path(page_name: 'page', page_id: page.id) %>
+          <%= link_to path, :remote => true do %>
+            <li><%= page.title %></li>
+          <% end %>
+        <% end %>
+      </ul>
     </nav>
+  </header>
 
-    <h1 id="title"><%= @site&.title || 'Your Site Title' %></h1>
-
-    <div id="content">
-      <% if @page %>
+  <div id="content" class="pure-u-1 pure-u-md-1 pure-u-lg-3-4">
+    <% if @page %>
+      <div>
         <%= render partial: 'home/page', :locals => { page: @page } %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 
   <% if @site&.photos&.any? %>
-    <%= variable_image_tag(@site.photos[0], :medium, 'logo-image') %>
+    <div>
+      <%= variable_image_tag(@site.photos[0], :medium, 'logo-image') %>
+    </div>
   <% end %>
-
-  <div class="pure-u-md-1-12 pure-u-lg-1-8 page-margin"></div>
 </div>
