@@ -150,15 +150,19 @@ div {
   text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 
-@media screen and (max-width: 1024px) {
-  html {
-    padding: 0 !important;
+@media only screen and (max-width: 1024px) {
+  .logo-image {
+    display: none;
   }
 
-  body {
-    -webkit-box-shadow: none !important;
-    -moz-box-shadow: none !important;
-    box-shadow: none !important;
+  input, textarea {
+    margin-bottom: 3% !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (hover: none) and (pointer: coarse) {
+  html {
+    padding: 0 !important;
   }
 
   .logo-image {
@@ -183,11 +187,5 @@ div {
 
   input, textarea {
     margin-bottom: 10% !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  html {
-    padding: 0 !important;
   }
 }
