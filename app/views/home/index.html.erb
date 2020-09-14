@@ -20,6 +20,11 @@
             <li><%= page.title %></li>
           <% end %>
         <% end %>
+        <% if @site&.photos&.any? %>
+          <div>
+            <%= image_tag @site.photos[0].image.url, class: 'logo-image mobile' %>
+          </div>
+        <% end %>
       </ul>
     </nav>
   </header>
@@ -34,7 +39,7 @@
 
   <% if @site&.photos&.any? %>
     <div>
-      <%= image_tag @site.photos[0].image.url, class: 'logo-image' %>
+      <%= image_tag @site.photos[0].image.url, class: 'logo-image standard' %>
     </div>
   <% end %>
 </div>
