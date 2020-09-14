@@ -60,10 +60,6 @@
       color: <%= @theme.content_text_color %>;
     }
 
-    div.section:not(:last-of-type) {
-      border-bottom: 1px solid <%= @theme.content_text_color %> !important;
-    }
-
     div.post:not(:last-of-type) {
       border-bottom: 1px solid <%= @theme.content_text_color %> !important;
     }
@@ -78,11 +74,7 @@
       background: <%= @theme.border_color %>;
     }
 
-    div.section:not(:last-of-type) {
-      border-bottom: 1px solid <%= @theme.border_color %>;
-    }
-
-    div.post:not(:last-of-type) {
+    div.post {
       border-bottom: 1px solid <%= @theme.border_color %>;
     }
   <% end %>
