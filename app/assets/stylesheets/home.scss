@@ -83,6 +83,10 @@ nav {
     align-items: center;
     justify-content: center;
   }
+
+  .section:not(:first-of-type) {
+    padding-top: 1% !important;
+  }
 }
 
 button:focus {
