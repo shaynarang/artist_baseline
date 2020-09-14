@@ -114,8 +114,7 @@ textarea {
   text-align: center;
 
   input[type='submit'] {
-    height: 50px;
-    width: 120px;
+    padding: 1% 3%;
     border: none;
     background: black;
     color: white;
@@ -182,10 +181,14 @@ div {
   }
 
   h1#title {
-    font-size: 225% !important;
+    font-size: 250% !important;
   }
 
   nav ul {
+    font-size: 250% !important;
+  }
+
+  #content {
     font-size: 225% !important;
   }
 }
