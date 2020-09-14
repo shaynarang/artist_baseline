@@ -22,7 +22,7 @@
         <% end %>
         <% if @site&.photos&.any? %>
           <div>
-            <%= image_tag @site.photos[0].image.url, class: 'logo-image mobile' %>
+            <%= variable_image_tag(@site.photos[0], :thumb, 'logo-image mobile') %>
           </div>
         <% end %>
       </ul>
