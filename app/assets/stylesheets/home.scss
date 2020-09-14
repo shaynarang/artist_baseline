@@ -2,11 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-html {
-  padding-top: 4%;
+h1#title {
+  letter-spacing: 6px;
+  padding: 0 4%;
 }
 
-body {
+nav {
+  height: 100%;
+  z-index: 4;
+
+  .hamburger-container {
+    position: absolute;
+    top: 1%;
+    right: 0;
+  }
+
+  ul {
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    display: none;
+    list-style-type: none;
+    position: fixed;
+    font-size: 200%;
+
+    li {
+      padding: 0;
+      margin: 0;
+      height: 84px;
+      align-items: center;
+      display: flex;
+      letter-spacing: 4px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a {
+      text-decoration: none;
+      display:        flex;
+      flex-grow:      1;
+      flex-shrink:    1;
+      justify-content: center;
+    }
+  }
 
   #footer {
     position: absolute;
@@ -16,132 +59,70 @@ body {
     text-align: center;
     margin-top: 25.5%;
   }
+}
 
-  nav {
-    position: fixed;
-    width: inherit;
-    z-index: 4;
+.logo-image {
+  z-index: 6;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
 
-    ul {
-      width: inherit;
-      padding: 0;
-      margin: 0;
-      padding-bottom: 3%;
-      border: none;
-      background: white;
-      position: fixed;
-      display: none;
-      list-style-type: none;
+#content {
+  font-size: 125%;
+  text-align: center;
 
-      li {
-        height: 84px;
-        font-size: 200%;
-        align-items: center;
-        display: flex;
-        letter-spacing: 4px;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      a {
-        text-decoration: none;
-        display:        flex;
-        flex-grow:      1;
-        flex-shrink:    1;
-        justify-content: center;
-      }
-    }
-
-    .hamburger-container {
-      text-align: right;
-
-      button {
-        background: white;
-      }
-    }
+  h1 {
+    font-size: 25px;
   }
 
-  h1#title {
-    width: 46%;
-    float: left;
-    margin: 0;
-    padding: 16.5px 20px;
-    text-align: center;
-    letter-spacing: 6px;
+  .section {
+    padding: 5% 5% 0 5%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+button:focus {
+  outline: 0;
+}
+
+p {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.field {
+  padding-bottom: 1%;
+
+  input, textarea {
+    margin: 2% 0;
+    width: 100%;
   }
 
-  .logo-image {
-    height: 363px;
-    width: 363px;
-    margin-left: calc(100% - 363px);
+  input:focus, textarea:focus {
+    outline: none !important;
   }
+}
 
-  #content {
-    font-size: 16px;
-    text-align: center;
-    padding-top: 14%;
+textarea {
+  height: 108px;
+}
 
-    h1 {
-      font-size: 25px;
-    }
+.actions {
+  text-align: center;
 
-    .section {
-      align-items: center;
-      justify-content: center;
-    }
+  input[type='submit'] {
+    height: 50px;
+    width: 120px;
+    border: none;
+    background: black;
+    color: white;
   }
+}
 
-  button:focus {
-    outline: 0;
-  }
-
-  p {
-    line-height: 1.5;
-    text-align: justify;
-  }
-
-  .field {
-    padding-bottom: 2%;
-
-    input, textarea {
-      margin: 2% 0;
-      width: 100%;
-      padding: 12px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    input:focus, textarea:focus {
-      outline: none !important;
-    }
-
-    input {
-      height: 50px;
-    }
-
-    textarea {
-      height: 108px;
-    }
-  }
-
-  .actions {
-    text-align: center;
-
-    input[type='submit'] {
-      height: 50px;
-      width: 120px;
-      border: none;
-      background: black;
-      color: white;
-    }
-  }
-
-  .music_snippet {
-    margin: 0 auto;
-  }
+.music_snippet {
+  margin: 0 auto;
 }
 
 div {
@@ -181,31 +162,35 @@ div {
 }
 
 @media screen and (max-width: 1024px) {
+  html {
+    padding: 0 !important;
+  }
+
   body {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important;
   }
 
+  #content {
+    font-size: 200% !important;
+  }
+
+  .logo-image {
+    display: none;
+  }
+
   h1#title {
-    width: 52% !important;
+    font-size: 225% !important;
+  }
+
+  nav ul {
+    font-size: 225% !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   html {
-    padding: 0;
-  }
-
-  .page-margin {
-    display: none;
-  }
-
-  #content {
-    margin: 10% 2%;
-  }
-
-  h1#title {
-    letter-spacing: normal !important;
+    padding: 0 !important;
   }
 }
